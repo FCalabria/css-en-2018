@@ -59,6 +59,9 @@ header a {
   margin-left: var(--spacer);
   white-space: nowrap;
 }
+header input:placeholder-shown {
+  border: var(--c-accent) 2px solid;
+}
 .logo img {
   max-width: 150px;
   min-width: 80px;
