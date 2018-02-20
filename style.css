@@ -44,10 +44,20 @@ button:hover {
 button:hover, buton:focus {
   --c-btn-background: var(--c-accent);
 }
+/* Generic classes */
+.flex-right {
+  margin-left: auto;
+}
 /* Header */
 header {
+  align-items: flex-end;
+  display: flex;
   padding: calc(var(--spacer) / 2) var(--spacer);
   margin-bottom: calc(var(--spacer) / 2);
+}
+header a {
+  margin-left: var(--spacer);
+  white-space: nowrap;
 }
 .logo img {
   max-width: 150px;
@@ -55,17 +65,41 @@ header {
   width: 100%;
 }
 /* Main content */
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+main div {
+  position: relative;
+}
 main img {
   display: block;
   max-width: 250px;
 }
+main span {
+  top: 1rem;
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+main div:hover span, main div:focus span {
+  background-color: var(--c-background);
+  display: inline;
+}
 /* Footer */
 footer {
+  display: flex;
+  flex-direction: column;
   font-size: .8rem;
   margin-top: var(--spacer);
+  text-align: center;
 }
 footer p {
   margin: 0.5em;
+}
+.social-logos {
+  display: flex;
+  justify-content: space-evenly;
 }
 .social-logos img {
   height: 40px;
