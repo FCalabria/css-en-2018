@@ -1,18 +1,53 @@
+:root {
+  --c-accent: #BB3900;
+  --c-background: #222;
+  --c-medium: #797470;
+  --c-text: #F1F1EC;
+  --spacer: 15px;
+}
+
 /* Generic styles */
 body {
+  background-color: var(--c-background);
+  color: var(--c-text);
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 500;
   margin: 0;
+}
+*:focus {
+  outline-color: var(--c-accent);
+}
+a {
+  color: var(--c-accent);
+}
+a:visited {
+  color: var(--c-medium);
+}
+a:hover, a:focus {
+  font-weight: bold;
 }
 input {
   padding: 0.5rem;
 }
 button {
+  --c-btn-background: var(--c-medium);
+  background-color: var(--c-btn-background);
+  border-style: solid;
+  border-color: var(--c-btn-background);
+  color: var(--c-text);
   font-weight: bold;
   padding: 0.5rem;
 }
 button:hover {
   cursor: pointer;
+}
+button:hover, buton:focus {
+  --c-btn-background: var(--c-accent);
+}
+/* Header */
+header {
+  padding: calc(var(--spacer) / 2) var(--spacer);
+  margin-bottom: calc(var(--spacer) / 2);
 }
 .logo img {
   max-width: 150px;
@@ -25,6 +60,13 @@ main img {
   max-width: 250px;
 }
 /* Footer */
+footer {
+  font-size: .8rem;
+  margin-top: var(--spacer);
+}
+footer p {
+  margin: 0.5em;
+}
 .social-logos img {
   height: 40px;
 }
