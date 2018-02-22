@@ -67,6 +67,31 @@ header input:placeholder-shown {
   min-width: 80px;
   width: 100%;
 }
+@supports (mix-blend-mode: hard-light) {
+  .logo {
+    position: relative;
+  }
+  .logo:after {
+    content: '';
+    display: block;
+    height: 20%;
+    width: 20%;
+    opacity: 0;
+    top: 42%;
+    right: 9%;
+    position: absolute;
+    pointer-events: none;
+    z-index: 3;
+  }
+  .logo::after {
+    background: radial-gradient(circle, #fff 0%, #dcdd8b 20%, #000 100%);
+    mix-blend-mode: hard-light;
+  }
+  .logo:hover::after {
+    opacity: 0.5;
+    transition: opacity .2s ease-in .5s;
+  }
+}
 /* Main content */
 main {
   display: flex;
