@@ -89,6 +89,27 @@ main div:hover span, main div:focus span {
   background-color: var(--c-background);
   display: inline;
 }
+.landscape {
+  grid-column: span 2;
+}
+.portrait {
+  grid-row: span 2;
+}
+
+@supports (display: grid) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-flow: dense;
+    grid-gap: var(--spacer);
+  }
+  main img {
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    width: 100%;
+  }
+}
 /* Footer */
 footer {
   display: flex;
