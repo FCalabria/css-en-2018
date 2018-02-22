@@ -100,14 +100,28 @@ main div:hover span, main div:focus span {
   main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Chrome grid in grid fix */
+    /* grid-auto-rows: 200px; */
     grid-auto-flow: dense;
     grid-gap: var(--spacer);
+  }
+  main div {
+    align-items: end;
+    display: grid;
   }
   main img {
     height: 100%;
     max-width: none;
     object-fit: cover;
     width: 100%;
+  }
+  main span {
+    position: relative;
+    top: 0;
+  }
+  main img, main span {
+    grid-column: 1;
+    grid-row: 1;
   }
 }
 /* Footer */
