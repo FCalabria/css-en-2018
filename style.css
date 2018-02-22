@@ -170,3 +170,13 @@ footer p {
 .social-logos img {
   height: 40px;
 }
+
+@supports (display: grid) {
+  .urban-layout {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: ". . . ." ". central central . " " . central central ."
+  }
+  .urban-layout .central-image {
+    grid-area: central;
+  }
+}
