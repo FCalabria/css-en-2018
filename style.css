@@ -77,7 +77,9 @@ main div {
 }
 main img {
   display: block;
+  filter: contrast(0.9) sepia(0.2);
   max-width: 250px;
+  position: relative;
 }
 main span {
   top: 1rem;
@@ -89,13 +91,39 @@ main div:hover span, main div:focus span {
   background-color: var(--c-background);
   display: inline;
 }
+@supports (filter: grayscale(1)) {
+  main div:hover img, main div:focus img {
+    filter: grayscale(.3) blur(2px) brightness(.5);
+  }
+  main div:hover span, main div:focus span {
+    background-color: transparent;
+  }
+}
 .landscape {
   grid-column: span 2;
 }
 .portrait {
   grid-row: span 2;
 }
-
+@supports (mix-blend-mode: overlay) {
+  /* Filter idea from cssgram */
+  main div:after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    pointer-events: none;
+    z-index: 3;
+  }
+  main div::after {
+    background-image: radial-gradient(circle, #ecc798 20%, #d35435 75%, #634c03 100%);
+    mix-blend-mode: overlay;
+    opacity: 0.4;
+  }
+}
 @supports (display: grid) {
   main {
     display: grid;
